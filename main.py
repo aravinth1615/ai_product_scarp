@@ -58,8 +58,9 @@ def main():
             text_format=ProductInfo,
             temperature=0.8
         )
-        instagram_response = get_instagram(input_text)
-        facebook_response = get_facebook(input_text.capitalize())
+        instagram_response = get_instagram(input_text.replace(" ", ""))
+        facebook_response = get_facebook(
+            input_text.capitalize().replace(" ", ""))
 
     with tab1:
         if response is not None:
